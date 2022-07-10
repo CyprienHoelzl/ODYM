@@ -39,7 +39,7 @@ Where $C(w,t,c)$ is the capacity of the different waste treatment technologies w
 
 __d)	Optimisation:__ For a system with a 1:1 correspondence of industries and markets, which is the basis of input-output models, the application of linear optimisation to select between competing technological alternatives is common. This optimisation approach can also be used to determine waste treatment cascades so that non-functional recycling, costs, or GHG emissions are minimized. A waste cascade optimisation problem has the typical form (Kondo and Nakamura 2005).
 
-$$ \begin{eqnarray} min C = c^t\cdot x\\ s.t.\\ w = G\cdot x+y\\ x = S\cdot w \\ x \geq 0 $$
+$$ \begin{eqnarray} min C = c^t\cdot x\\ s.t.\\ w = G\cdot x+y\\ x = S\cdot w \\ x \geq 0 \end{eqnarray} $$
 	
 In the above equation, x is the output vector of the different waste treatment plants, c is a cost vector, y is the final demand for waste treatment, G is the waste generation of waste treatment, and S is the allocation of waste to treatment processes.
 	
