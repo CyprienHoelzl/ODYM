@@ -24,27 +24,23 @@ ODYM was developed to handle the typical types of model equations and approaches
 These approaches include:
 
 __a)	Regression models:__ Socioeconomic parameters, such as in-use stocks or final consumption are required to determine the basic material balance or material flows. They are often determined from regression models fed by exogenous parameters such as GDP. A typical example for a regression model is the Gompertz function, where $a(p,r)$ and $b(p,r)$ are product-and region-dependent scaling parameters. Regression models can also be used to determine future scenarios.
-	   
 ```math 
 i(p,r,t) = i_{Sat}\cdot exp^{-b(p,r)\cdot exp^{-a(p,r)\cdot t}}
 ```
 
-__b)	Dynamic stock model:__ The material stock S and outflow o can be estimated from inflow data i, using a product lifetime distribution $\lambda(t,c)$, which describes the probability of a product of age-cohort c being discarded at time t 
-
+__b)	Dynamic stock model:__ The material stock S and outflow o can be estimated from inflow data i, using a product lifetime distribution $\lambda(t,c)$, which describes the probability of a product of age-cohort c being discarded at time t.
 ```math 
 \begin{eqnarray} o(t)=\sum_{t'\leq t}i(t')\cdot \lambda(t,c = t') \\ S(t)=\sum_{t'\leq t}(i(t')-o(t')) \end{eqnarray}
 ```
 
-__c)	Parameter equation with transfer coefficients:__ The distribution of a material flow to different processes is determined by the transfer coefficient. Consider a flow of different end-of-life products p, $F_p$, with chemical element composition $\mu$. The products are sent to waste treatment by different technologies w, and each technology has its own element-specific yield factor $\Gamma$, which assigns the incoming elements to different scrap groups s and which varies depending on when the technology was installed (age-cohort dependency): $\Gamma = \Gamma(w,e,s,c)$. The flow of chemical elements in the different scrap groups $F_s$ is then
-
+__c)	Parameter equation with transfer coefficients:__ The distribution of a material flow to different processes is determined by the transfer coefficient. Consider a flow of different end-of-life products p, $F_{p} $, with chemical element composition $\mu $. The products are sent to waste treatment by different technologies w, and each technology has its own element-specific yield factor $\Gamma$, which assigns the incoming elements to different scrap groups s and which varies depending on when the technology was installed (age-cohort dependency): $\Gamma = \Gamma(w,e,s,c)$. The flow of chemical elements in the different scrap groups $F_s$ is then:
 ```math 
 F_s(t,s,e) = \sum_{w,p,c}\Gamma(w,e,s,c)\cdot C(w,t,c)\cdot F_p(t,p)\cdot \mu(p,e)
 ```
 
 Where $C(w,t,c)$ is the capacity of the different waste treatment technologies w of age-cohort c in a year t.
 
-__d)	Optimisation:__ For a system with a 1:1 correspondence of industries and markets, which is the basis of input-output models, the application of linear optimisation to select between competing technological alternatives is common. This optimisation approach can also be used to determine waste treatment cascades so that non-functional recycling, costs, or GHG emissions are minimized. A waste cascade optimisation problem has the typical form (Kondo and Nakamura 2005)
-	
+__d)	Optimisation:__ For a system with a 1:1 correspondence of industries and markets, which is the basis of input-output models, the application of linear optimisation to select between competing technological alternatives is common. This optimisation approach can also be used to determine waste treatment cascades so that non-functional recycling, costs, or GHG emissions are minimized. A waste cascade optimisation problem has the typical form (Kondo and Nakamura 2005).
 ```math 
 \begin{eqnarray} min C = c^t\cdot x\\ s.t.\\ w = G\cdot x+y\\ x = S\cdot w \\ x \geq 0
 ```
