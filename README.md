@@ -29,7 +29,8 @@ $$ i(p,r,t) = i_{Sat}\cdot exp^{-b(p,r)\cdot exp^{-a(p,r)\cdot t}} $$
 
 __b)	Dynamic stock model:__ The material stock S and outflow o can be estimated from inflow data i, using a product lifetime distribution $\lambda(t,c)$, which describes the probability of a product of age-cohort c being discarded at time t.
 
-$$ \begin{eqnarray} o(t)=\sum_{t'\leq t}i(t')\cdot \lambda(t,c = t') \\ S(t)=\sum_{t'\leq t}(i(t')-o(t')) \end{eqnarray} $$
+$$ \begin{eqnarray} o(t)=\sum_{t'\leq t}i(t')\cdot \lambda(t,c = t') \\ 
+S(t)=\sum_{t'\leq t}(i(t')-o(t')) \end{eqnarray} $$
 
 __c)	Parameter equation with transfer coefficients:__ The distribution of a material flow to different processes is determined by the transfer coefficient. Consider a flow of different end-of-life products p, $F_{p} $, with chemical element composition $\mu $. The products are sent to waste treatment by different technologies w, and each technology has its own element-specific yield factor  $\Gamma $, which assigns the incoming elements to different scrap groups s and which varies depending on when the technology was installed (age-cohort dependency):  $\Gamma = \Gamma(w,e,s,c) $. The flow of chemical elements in the different scrap groups $F_s$ is then:
 
